@@ -53,30 +53,20 @@ namespace Proyecto
             threshold = 250;
 
             gligarRectangle = new Rectangle[8, 3];
-            gligarRectangle[0, 0] = new Rectangle(90, 39, 29, 29); //abajo
-            gligarRectangle[0, 1] = new Rectangle(126, 39, 33, 30);
-            gligarRectangle[0, 2] = new Rectangle(162, 38, 35, 32);
-            gligarRectangle[1, 0] = new Rectangle(91, 71, 34, 36); //arriba
-            gligarRectangle[1, 1] = new Rectangle(126, 71, 34, 36);
-            gligarRectangle[1, 2] = new Rectangle(164, 71, 34, 36);
-            gligarRectangle[2, 0] = new Rectangle(98, 113, 25, 34);//izquierda
-            gligarRectangle[2, 1] = new Rectangle(130, 110, 25, 36);
-            gligarRectangle[2, 2] = new Rectangle(169, 109, 24, 36);
-            gligarRectangle[3, 0] = new Rectangle(98, 151, 25, 34);//derecha
-            gligarRectangle[3, 1] = new Rectangle(133, 149, 25, 36);
-            gligarRectangle[3, 2] = new Rectangle(171, 149, 24, 36);
-            gligarRectangle[4, 0] = new Rectangle(98, 185, 28, 38);//abajo-izquierda
-            gligarRectangle[4, 1] = new Rectangle(133, 185, 28, 38);
-            gligarRectangle[4, 2] = new Rectangle(172, 185, 28, 38);
-            gligarRectangle[5, 0] = new Rectangle(102, 222, 28, 39);//abajo-derecha
-            gligarRectangle[5, 1] = new Rectangle(136, 222, 28, 39);
-            gligarRectangle[5, 2] = new Rectangle(173, 222, 28, 39);
-            gligarRectangle[6, 0] = new Rectangle(99, 264, 27, 39);//arriba-izquierda
-            gligarRectangle[6, 1] = new Rectangle(134, 264, 27, 39);
-            gligarRectangle[6, 2] = new Rectangle(174, 264, 27, 39);
-            gligarRectangle[7, 0] = new Rectangle(104, 304, 27, 39);//arriba-derecha
-            gligarRectangle[7, 1] = new Rectangle(141, 304, 27, 39);
-            gligarRectangle[7, 2] = new Rectangle(178, 304, 27, 39);
+            int sheetX;
+            int sheetY;
+            int gligarWidth = 35;
+            int gligarHeight = 36;
+            for (int i = 0; i < 8; i = i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    gligarRectangle[i, j] = new Rectangle(sheetX, sheetY, gligarWidth, gligarHeight);
+                    sheetX += gligarWidth;
+                }
+                sheetX = 0;
+                sheetY += gligarHeight;
+            }
 
             previousAnimationIndex = 2;
             currentAnimationIndex = 1;
